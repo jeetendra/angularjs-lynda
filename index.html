@@ -1,75 +1,103 @@
 <!doctype html>
 <html lang="en" ng-app>
-<head>
-	<meta charset="UTF-8">
-	<title>Demo</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<script src="lib/angular.js"></script>
-</head>
-<body>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="lib/angular.js"></script>
+        <script src="js/controllers/app.js"></script>
+        <script>
+            function SecondCtrl($scope) {
+                $scope.name = "ddd sdf sdf sd |||| d";
 
-<div class="container">
+            }
+        </script>
+    </head>
+    <body>
 
-<form action="" class="row">
-	<fieldset class="col-6">
-		<h1>Welcome {{ name }}!</h1>
-		<input type="text" placeholder="enter your text" ng-model="name" class="form-control">
-	</fieldset>
-</form>
-	<hr>
+        <div class="container">
+            <div class="wrapper" ng-controller="AppCtrl">
+                <div class="page-header">
+                    <h1>Angular Air</h1>
+                </div>
 
-	<div class="row form-group">
-	<h2>Column sizing</h2>
-	  <div class="col-lg-2">
-	    <input type="text" class="form-control" placeholder=".col-lg-2">
-	  </div>
-	  <div class="col-lg-3">
-	    <input type="text" class="form-control" placeholder=".col-lg-3">
-	  </div>
-	  <div class="col-lg-4">
-	    <input type="text" class="form-control" placeholder=".col-lg-4">
-	  </div>
-	</div>
+                <div class="row">
+                    <div class="col-6">
+                         <ul>
+                            <li ng-repeat="airport in airports">
+                                <a href="" ng-click="setAirport(airport.code)">{{ airport.code }} - {{airport.city}}</a>
+                                <button class="btn btn-default" ng-click="editAirport(airport.code)">edit</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6" ng-include src="sidebarURL"></div>
+                    <div class="col-12" ng-include src="editURL"></div>
+                </div>
+
+            </div>
+
+<!--
+            <form action="" class="row" ng-controller="SecondCtrl">
+                <fieldset class="col-6">
+                    <h1>Welcome  initate dfsfsdfds  dfds{{name }}!</h1>
+                    <input type="text" placeholder="enter your text" ng-model="name" class="form-control">
+                </fieldset>
+            </form>
+            <hr>
+
+            <div class="row form-group">
+                <h2>Column s dsfsdf dsfsdf dsf sdfs dsfsdf izing</h2>
+                <div class="col-lg-2">
+                    <input type="text" class="form-control" placeholder=".col-lg-2">
+                </div>
+                <div class="col-lg-3">
+                    <input type="text" class="form-control" placeholder=".col-lg-3">
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" placeholder=".col-lg-4">
+                </div>
+            </div>
 
 
-		<form action="" method="POST" class="form-horizontal">
-		    <fieldset>
-		        <div class="form-group">
-		            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-		             <div class="col-lg-10">
-		               <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-		             </div>
-		        </div>
+            <form action="" method="POST" class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                    </div>
 
 
 
-		        <div class="form-group">
-		            <div class="col-lg-offset-2 col-lg-2">
-		                <button type="submit" class="btn btn-primary">Submit</button>
-		            </div>
-		        </div>
-		    </fieldset>
-		</form>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-2">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
 
 
-		<form class="rpw">
-		  <fieldset class="col-6">
-		    <legend>Legend</legend>
-		    <div class="form-group">
-		      <label for="exampleInputEmail">Email address</label>
-		      <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
-		    </div>
-		    <div class="form-group">
-		      <label for="exampleInputEmail">Email address</label>
-		      <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
-		    </div>
-	      </fieldset>
-	    </form>
+            <form class="rpw">
+                <fieldset class="col-6">
+                    <legend>Legend</legend>
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Email address</label>
+                        <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Email address</label>
+                        <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email">
+                    </div>
+                </fieldset>
+            </form>-->
 
-</div>
+        </div>
 
-</body>
+    </body>
 </html>
